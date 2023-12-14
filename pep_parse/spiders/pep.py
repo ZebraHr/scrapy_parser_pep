@@ -16,7 +16,8 @@ class PepSpider(scrapy.Spider):
             '//section[@id="numerical-index"]'
             '//a[@class="pep reference internal"]/@href').getall()
         for link in all_links:
-            link += '/'
+            if not link.endswith('/'):
+                link += '/'
             yield response.follow(link, callback=self.parse_pep)
 
     def parse_pep(self, response):
