@@ -10,6 +10,10 @@ DATE_FORMAT = '%Y-%m-%dT%H-%M-%S'
 SPIDER_MODULES = ['pep_parse.spiders']
 NEWSPIDER_MODULE = 'pep_parse.spiders'
 
+ALLOWED_DOMAINS = ['peps.python.org']
+START_URLS = ['https://peps.python.org/']
+SPIDER_NAME = 'pep'
+
 ROBOTSTXT_OBEY = True
 
 FEEDS = {
